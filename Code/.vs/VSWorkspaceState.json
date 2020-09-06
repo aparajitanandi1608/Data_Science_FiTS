@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\deployment",
+    "\\preprocessing",
+    "\\Tests",
+    "\\training"
+  ],
+  "SelectedNode": "\\preprocessing\\preprocess.py",
+  "PreviewInSolutionExplorer": false
+}
