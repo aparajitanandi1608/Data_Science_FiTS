@@ -21,18 +21,18 @@ def train_model(epoch,X_train,Y_train):
 
     # defing the model using the sequential class
     classifier = Sequential()
-
+    classifier.load_weights("saved_model_original_1/variables/variables.index")
     # adding layers in the model
     # first conv and maxpool layer
-    classifier.add(Convolution2D(128, [5,5], input_shape = (28, 28, 1), activation = 'relu'))
-    classifier.add(MaxPooling2D(pool_size = [3, 3]))
+    classifier.add(Convolution2D(64, [5,5], input_shape = (28, 28, 1), activation = 'relu'))
+    classifier.add(MaxPooling2D(pool_size = [2, 2]))
 
     # second conv and maxpool layer
     #classifier.add(Convolution2D(64, [2,2], activation = 'relu'))
     #classifier.add(MaxPooling2D(pool_size = [2, 2]))
 
     # third conv and maxpool layer
-    classifier.add(Convolution2D(64 , [2,2], activation = 'relu'))
+    classifier.add(Convolution2D(64 , [5,5], activation = 'relu'))
     classifier.add(MaxPooling2D(pool_size = [2, 2]))
 
     # flattening layer
@@ -56,11 +56,11 @@ def train_model(epoch,X_train,Y_train):
                    epochs = epoch, validation_split = 0.2)
     
     # saving the model
-    classifier.save('saved_model_original')
+    classifier.save('saved_model_original_1')
 
 # function to save the model as a pkl file for deployment
-def save_model(model,model_path):
-    joblib.dump(model,model_path)
+#def save_model(model,model_path):
+    #joblib.dump(model,model_path)
 
 # main function
 if __name__ == "__main__":
@@ -68,8 +68,8 @@ if __name__ == "__main__":
     X_train,Y_train,X_test,Y_test = import_Xy()
     
     # Training the model
-    model= train_model(20,X_train,Y_train)
+    model= train_model(10,X_train,Y_train)
     
     # saving the model
-    save_model(model,"Code.pkl")
+    #save_model(model,"Code.pkl")
  

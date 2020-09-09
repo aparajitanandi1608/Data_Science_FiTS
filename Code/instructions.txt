@@ -1,0 +1,28 @@
+These files contain the basic instructions, 
+please go through before running the entire thing.
+
+working directory to be set while running model:
+"Data-Science-template-master/Code"
+
+***do not train the model***
+***its already trained and saved***
+just in case the entire preprocess and train files are to be run.
+please rename the saved model name in the train.py code to some other name
+
+***to run the code open the .py files outside the folder***
+
+folders:
+deployment: code for deployment
+preprocessing: code for preprocessing
+saved_model_original: previously saved model whose weights have been taken for the upgraded version
+saved_model_original_1: latest model
+Test: code for test_functions
+training: code for training
+
+datasets: fashion mnist
+
+code.pkl: pickle file for saved version of saved_model_original
+test.pkl: pickle file created during unit test
+
+other duplicates .py files:
+these are to be kept as it is

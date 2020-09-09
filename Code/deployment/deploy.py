@@ -23,11 +23,11 @@ def ModelEval(verbose = True):
     if request.is_json:
         # Parse the JSON into a Python dictionary of the right form
         req = request.get_json()
-        X_eval = np.array(req["data"]).reshape(1,-1)
+        X_eval = np.array(req["data"]).reshape(1,28,28,1)
         # Print the dictionary
-        
         prediction = clf.predict(X_eval)
         print("prediction", prediction)
+        prediction = np.argmax(prediction, axis = 1)
         # Return a string along with an HTTP status code
         return jsonify(prediction.tolist()), 200
 
