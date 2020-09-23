@@ -1,0 +1,4 @@
+Model,training_time,accuracy,precision,recall
+ResNet121,442 sec,92,92,
+VGG19,1244 sec ,90,90,
+MobileNetB0,300 sec,92,92,
